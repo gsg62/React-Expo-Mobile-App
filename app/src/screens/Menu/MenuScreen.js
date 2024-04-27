@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native"
 import MenuTile from "./MenuTile"
 
 const MenuScreen = ({ navigation }) => {
-  // const name = route.params.name
   const MenuItems = [
     {
       title: "Item 1",
@@ -26,6 +25,7 @@ const MenuScreen = ({ navigation }) => {
       <View style={styles.tilesContainer}>
         {MenuItems.map((item) => (
           <MenuTile
+            key={item.title}
             title={item.title}
             component={item.component}
             navigation={navigation}
