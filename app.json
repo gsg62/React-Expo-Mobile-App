@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "react-expo-mobile-app",
+    "name": "React Expo App",
+    "description": "First React Expo test app",
     "slug": "react-expo-mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/react-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -15,7 +16,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ggeary3.reactexpomobileapp"
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +27,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b65e70e6-404c-4a49-9975-ac793241e469"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b65e70e6-404c-4a49-9975-ac793241e469"
     }
   }
 }

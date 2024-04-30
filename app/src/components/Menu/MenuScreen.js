@@ -20,8 +20,9 @@ const MenuScreen = ({ navigation }) => {
 
   return (
     <View style={styles.welcomeContainer}>
-      <Text style={styles.helloText}>Hello,</Text>
-      <Text style={styles.nameText}>Greg</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>menu screen</Text>
+      </View>
       <View style={styles.tilesContainer}>
         {MenuItems.map((item) => (
           <MenuTile
@@ -41,21 +42,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     padding: 20,
-    paddingTop: 40,
     justifyContent: "top",
     bottom: 20,
+  },
+  titleContainer: {
+    alignItems: "center",
   },
   tilesContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     padding: 10,
   },
-  helloText: {
-    fontSize: 20,
-  },
-  nameText: {
-    fontSize: 30,
-    fontWeight: 400,
+  titleText: {
+    fontSize: 24,
+    padding: 20,
   },
 })
 

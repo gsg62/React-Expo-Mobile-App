@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View } from "react-native"
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleText}>This is the home screen</Text>
+      <Text style={styles.titleText}>home screen</Text>
       <Text>Information about the app goes here .........</Text>
       <View style={styles.buttonContainer}>
         <Button
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   buttonContainer: {
-    height: "50%",
+    height: "80%",
     justifyContent: "center",
   },
 })

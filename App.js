@@ -1,11 +1,11 @@
-import HomeScreen from "./app/src/screens/Home/HomeScreen"
-import MenuScreen from "./app/src/screens/Menu/MenuScreen"
+import HomeScreen from "./app/src/components/Home/HomeScreen"
+import MenuScreen from "./app/src/components/Menu/MenuScreen"
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { StatusBar } from "expo-status-bar"
-import MenuItem1 from "./app/src/screens/Menu/MenuItem1";
-import MenuItem2 from "./app/src/screens/Menu/MenuItem2"
-import MenuItem3 from "./app/src/screens/Menu/MenuItem3"
+import MenuItem1 from "./app/src/components/Menu/MenuItem1";
+import MenuItem2 from "./app/src/components/Menu/MenuItem2"
+import MenuItem3 from "./app/src/components/Menu/MenuItem3"
 
 const Stack = createNativeStackNavigator()
 
