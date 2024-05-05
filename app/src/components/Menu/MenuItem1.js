@@ -1,10 +1,24 @@
 import { Text, View, StyleSheet, Button, ActivityIndicator } from "react-native"
-// import { getRandomJoke } from "../../api/testApi";
+import { useToast } from "react-native-toast-notifications"
 import { useJokeApi } from "../../hooks/useJokeApi"
+import { useLocalStorage } from "../../hooks/useLocalStorage"
 
-const MenuItem1 = (props) => {
+const MenuItem1 = () => {
   const { loading, getRandomJoke, joke } = useJokeApi()
+  const { addJoke } = useLocalStorage()
+  const toast = useToast()
+
   let buttonTitle = joke ? "lets hear another" : "lets hear it"
+
+  const handlePress = (joke) => {
+    const result = addJoke(joke)
+    if (joke.id == result._id) {
+      toast.show("joke saved", { type: "success" })
+    } else {
+      console.log(result)
+      toast.show("Error adding joke", { type: "danger" })
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -13,7 +27,10 @@ const MenuItem1 = (props) => {
       {loading ? (
         <ActivityIndicator style={styles.indicator} size="large" />
       ) : (
-        <Text style={styles.jokeText}>{joke}</Text>
+        <View>
+          <Text style={styles.jokeText}>{joke?.value}</Text>
+          <Button title="save joke" onPress={() => handlePress(joke)} />
+        </View>
       )}
     </View>
   )
@@ -32,7 +49,7 @@ const styles = StyleSheet.create({
   },
   jokeText: {
     fontSize: 18,
-    top: 20,
+    margin: 20,
   },
   indicator: {
     top: 20,

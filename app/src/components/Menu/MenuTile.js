@@ -1,8 +1,6 @@
-import { Text, View, StyleSheet, Button } from "react-native"
+import { View, StyleSheet, Button } from "react-native"
 
 const MenuTile = (props) => {
-  // console.log("navigation:", navigation)
-  // console.log("props:", props)
   return (
     <View style={styles.tileContainer}>
       <Button

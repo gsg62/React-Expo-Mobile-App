@@ -15,4 +15,4 @@ Use this command to prep ios test deployment (without paid developer account)
 npm run build 
 ```
 
-More configuration needed before deploying to local native ios device, more info [here](https://github.com/expo/expo/discussions/27489)
+More configuration needed before deploying to local native ios device, info [here](https://github.com/expo/expo/discussions/27489)

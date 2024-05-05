@@ -2,19 +2,19 @@ import { useCallback, useState } from "react"
 import { chuckNorrisApi } from "../api/jokeApi"
 
 export const useJokeApi = () => {
-  const [joke, setJoke] = useState("")
-  const [loading, setLoading] = useState("")
+  const [joke, setJoke] = useState()
+  const [loading, setLoading] = useState(false)
 
   const getRandomJoke = useCallback(async () => {
     setLoading(true)
     try {
       chuckNorrisApi.get("/random").then((response) => {
-        // console.log("response: ", response)
-        setJoke(response.data.value)
+        setJoke(response.data)
         setLoading(false)
       })
     } catch (error) {
       console.error(error)
+      setLoading(false)
       throw error
     }
   }, [])
