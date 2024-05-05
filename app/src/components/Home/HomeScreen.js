@@ -1,35 +1,16 @@
-import { Button, StyleSheet, Text, View } from "react-native"
+import { Button, Text, View } from "react-native";
+import styles from "../../style/styles";
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.baseContainer}>
       <Text style={styles.titleText}>home screen</Text>
       <Text>Information about the app goes here .........</Text>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="Enter App"
-          onPress={() => navigation.navigate("Menu")}
-        />
+      <View style={styles.menuButtonContainer}>
+        <Button title="Enter App" onPress={() => navigation.navigate("Menu")} />
       </View>
     </View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "top",
-    padding: 10,
-  },
-  titleText: {
-    fontSize: 30,
-  },
-  buttonContainer: {
-    height: "80%",
-    justifyContent: "center",
-  },
-})
-
-export default HomeScreen
+export default HomeScreen;

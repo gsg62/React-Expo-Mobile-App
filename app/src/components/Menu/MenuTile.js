@@ -1,4 +1,5 @@
-import { View, StyleSheet, Button } from "react-native"
+import { View, Button } from "react-native";
+import styles from "../../style/styles";
 
 const MenuTile = (props) => {
   return (
@@ -10,23 +11,7 @@ const MenuTile = (props) => {
         {props.title}
       </Button>
     </View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({
-  tileContainer: {
-    height: 80,
-    width: "50%",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  helloText: {
-    fontSize: 20,
-  },
-  tileText: {
-    fontSize: 16,
-    fontWeight: 400,
-  },
-})
-
-export default MenuTile
+export default MenuTile;

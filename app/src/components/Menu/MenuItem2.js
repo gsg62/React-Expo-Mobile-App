@@ -1,10 +1,11 @@
-import { Text, View, StyleSheet, Button } from "react-native";
+import { Text, View, Button } from "react-native";
 import { useState, Fragment } from "react";
 import { useQuery } from "@realm/react";
 import JokeModel from "../../models/jokeModel";
 import DeleteButton from "../Buttons/DeleteButton";
 import EditModal from "../Modals/EditModal";
 import EditButton from "../Buttons/EditButton";
+import styles from "../../style/styles";
 
 const MenuItem2 = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -12,7 +13,7 @@ const MenuItem2 = () => {
   const jokes = useQuery(JokeModel);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.baseContainer}>
       <Text style={styles.titleText}>saved jokes</Text>
       {jokes.map((savedJoke) => (
         <Fragment key={savedJoke._id}>
@@ -52,34 +53,5 @@ const JokeDisplay = ({ savedJoke, setModalVisible, setSelectedJoke }) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#fff",
-    alignItems: "center",
-    padding: 10,
-    height: "100%",
-  },
-  jokeContainer: {
-    flexDirection: "row",
-    flexWrap: "nowrap",
-    padding: 10,
-  },
-  jokeTextContainer: {
-    justifyContent: "center",
-    width: "70%",
-  },
-  deleteButtonContainer: {
-    marginLeft: 10,
-  },
-  editButtonContainer: {
-    marginRight: 10,
-  },
-
-  titleText: {
-    fontSize: 24,
-    padding: 20,
-  },
-});
 
 export default MenuItem2;

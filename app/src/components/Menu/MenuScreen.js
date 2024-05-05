@@ -1,6 +1,7 @@
-import React from "react"
-import { StyleSheet, Text, View } from "react-native"
-import MenuTile from "./MenuTile"
+import React from "react";
+import { Text, View } from "react-native";
+import MenuTile from "./MenuTile";
+import styles from "../../style/styles";
 
 const MenuScreen = ({ navigation }) => {
   const MenuItems = [
@@ -16,14 +17,14 @@ const MenuScreen = ({ navigation }) => {
       title: "Item 3",
       component: "MenuItem3",
     },
-  ]
+  ];
 
   return (
-    <View style={styles.welcomeContainer}>
+    <View style={styles.menuContainer}>
       <View style={styles.titleContainer}>
         <Text style={styles.titleText}>menu screen</Text>
       </View>
-      <View style={styles.tilesContainer}>
+      <View style={styles.menuTilesContainer}>
         {MenuItems.map((item) => (
           <MenuTile
             key={item.title}
@@ -34,29 +35,29 @@ const MenuScreen = ({ navigation }) => {
         ))}
       </View>
     </View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({
-  welcomeContainer: {
-    flex: 1,
-    backgroundColor: "#fff",
-    padding: 20,
-    justifyContent: "top",
-    bottom: 20,
-  },
-  titleContainer: {
-    alignItems: "center",
-  },
-  tilesContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    padding: 10,
-  },
-  titleText: {
-    fontSize: 24,
-    padding: 20,
-  },
-})
+// const styles = StyleSheet.create({
+//   menuContainer: {
+//     flex: 1,
+//     backgroundColor: "#fff",
+//     padding: 20,
+//     justifyContent: "top",
+//     bottom: 20,
+//   },
+//   titleContainer: {
+//     alignItems: "center",
+//   },
+//   menuTilesContainer: {
+//     flexDirection: "row",
+//     flexWrap: "wrap",
+//     padding: 10,
+//   },
+//   titleText: {
+//     fontSize: 24,
+//     padding: 20,
+//   },
+// })
 
-export default MenuScreen
+export default MenuScreen;
